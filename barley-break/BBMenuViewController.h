@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface BBMenuViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 @end

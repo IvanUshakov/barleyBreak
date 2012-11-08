@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[BBSearchReultsViewController collectionView:cellForItemAtIndexPath:]:BBSearchReultsViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[BBImageCollectionCell initWithFrame:]:BBImageCollectionCell.m">
+      </ContextState>
+      <ContextState
+         contextName = "__48-[BBSearchReultsViewController setSearchString:]_block_invoke_0:BBSearchReultsViewController.m">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

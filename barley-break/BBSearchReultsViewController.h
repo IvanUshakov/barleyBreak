@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BBSearchReultsViewController : UICollectionViewController
-
+@interface BBSearchReultsViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@property (nonatomic, strong) NSString *searchString;
 @end

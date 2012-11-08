@@ -21,6 +21,9 @@
 		2A3EAC231645AA66008A8087 /* BBSearchReultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3EAC221645AA66008A8087 /* BBSearchReultsViewController.m */; };
 		2A3EAC261645AA8A008A8087 /* BBGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3EAC251645AA8A008A8087 /* BBGameViewController.m */; };
 		2A3EAC2C1645ACCD008A8087 /* BBNetworkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3EAC2B1645ACCD008A8087 /* BBNetworkModel.m */; };
+		2A3EAC42164AB119008A8087 /* BBImageCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3EAC41164AB119008A8087 /* BBImageCollectionCell.m */; };
+		2A3EAC4C164BA76A008A8087 /* UIImage+barleyBreak.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3EAC4B164BA76A008A8087 /* UIImage+barleyBreak.m */; };
+		2A3EAC4E164BAC9B008A8087 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A3EAC4D164BAC9B008A8087 /* placeholder.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,8 +49,11 @@
 		2A3EAC251645AA8A008A8087 /* BBGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBGameViewController.m; sourceTree = "<group>"; };
 		2A3EAC2A1645ACCD008A8087 /* BBNetworkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBNetworkModel.h; sourceTree = "<group>"; };
 		2A3EAC2B1645ACCD008A8087 /* BBNetworkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBNetworkModel.m; sourceTree = "<group>"; };
-		2A3EAC381645B108008A8087 /* BBNetworkConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBNetworkConnection.h; sourceTree = "<group>"; };
-		2A3EAC391645B108008A8087 /* BBNetworkConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBNetworkConnection.m; sourceTree = "<group>"; };
+		2A3EAC40164AB119008A8087 /* BBImageCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBImageCollectionCell.h; sourceTree = "<group>"; };
+		2A3EAC41164AB119008A8087 /* BBImageCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBImageCollectionCell.m; sourceTree = "<group>"; };
+		2A3EAC4A164BA76A008A8087 /* UIImage+barleyBreak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+barleyBreak.h"; sourceTree = "<group>"; };
+		2A3EAC4B164BA76A008A8087 /* UIImage+barleyBreak.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+barleyBreak.m"; sourceTree = "<group>"; };
+		2A3EAC4D164BAC9B008A8087 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,7 @@
 		2A3EABFB1645A6DA008A8087 /* barley-break */ = {
 			isa = PBXGroup;
 			children = (
+				2A3EAC3F164AB09F008A8087 /* Views */,
 				2A3EAC041645A6DA008A8087 /* BBAppDelegate.h */,
 				2A3EAC051645A6DA008A8087 /* BBAppDelegate.m */,
 				2A3EAC0D1645A6DB008A8087 /* MainStoryboard_iPhone.storyboard */,
@@ -101,6 +108,7 @@
 				2A3EAC281645AC74008A8087 /* Controllers */,
 				2A3EAC291645AC7F008A8087 /* Models */,
 				2A3EAC301645AD01008A8087 /* Categories */,
+				2A3EAC4D164BAC9B008A8087 /* placeholder.png */,
 			);
 			path = "barley-break";
 			sourceTree = "<group>";
@@ -137,8 +145,6 @@
 			children = (
 				2A3EAC2A1645ACCD008A8087 /* BBNetworkModel.h */,
 				2A3EAC2B1645ACCD008A8087 /* BBNetworkModel.m */,
-				2A3EAC381645B108008A8087 /* BBNetworkConnection.h */,
-				2A3EAC391645B108008A8087 /* BBNetworkConnection.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -146,8 +152,19 @@
 		2A3EAC301645AD01008A8087 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				2A3EAC4A164BA76A008A8087 /* UIImage+barleyBreak.h */,
+				2A3EAC4B164BA76A008A8087 /* UIImage+barleyBreak.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		2A3EAC3F164AB09F008A8087 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2A3EAC40164AB119008A8087 /* BBImageCollectionCell.h */,
+				2A3EAC41164AB119008A8087 /* BBImageCollectionCell.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +224,7 @@
 				2A3EAC0A1645A6DB008A8087 /* Default@2x.png in Resources */,
 				2A3EAC0C1645A6DB008A8087 /* Default-568h@2x.png in Resources */,
 				2A3EAC0F1645A6DB008A8087 /* MainStoryboard_iPhone.storyboard in Resources */,
+				2A3EAC4E164BAC9B008A8087 /* placeholder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +241,8 @@
 				2A3EAC231645AA66008A8087 /* BBSearchReultsViewController.m in Sources */,
 				2A3EAC261645AA8A008A8087 /* BBGameViewController.m in Sources */,
 				2A3EAC2C1645ACCD008A8087 /* BBNetworkModel.m in Sources */,
+				2A3EAC42164AB119008A8087 /* BBImageCollectionCell.m in Sources */,
+				2A3EAC4C164BA76A008A8087 /* UIImage+barleyBreak.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

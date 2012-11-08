@@ -37,7 +37,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="lVn-eQ-KJb" kind="push" id="sbH-hO-rc4"/>
+                                    <segue destination="lVn-eQ-KJb" kind="push" identifier="BBMenuToSelectImage" id="sbH-hO-rc4"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iyc-Ph-kRI">
@@ -56,41 +56,54 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Menu" id="Pul-hn-F4Z"/>
+                    <connections>
+                        <outlet property="searchTextField" destination="iyc-Ph-kRI" id="Svb-hP-NFN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YDr-GZ-Ziq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="389" y="48"/>
         </scene>
-        <!--Collection View Controller - Select Image-->
+        <!--Search Reults View Controller - Select Image-->
         <scene sceneID="X6s-75-Rok">
             <objects>
-                <collectionViewController autoresizesArchivedViewToFullSize="NO" title="Select Image" id="lVn-eQ-KJb" sceneMemberID="viewController">
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" title="Select Image" id="lVn-eQ-KJb" customClass="BBSearchReultsViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="chn-Po-xpA">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="npM-Wh-lOR">
-                            <size key="itemSize" width="160" height="150"/>
+                            <size key="itemSize" width="160" height="160"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="G2p-Rs-eIq">
-                                <rect key="frame" x="0.0" y="0.0" width="160" height="150"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BBImageCollectionCell" id="G2p-Rs-eIq" customClass="BBImageCollectionCell">
+                                <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="160" height="150"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="center" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="VFU-be-Gfo"/>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="VFU-be-Gfo" firstAttribute="leading" secondItem="G2p-Rs-eIq" secondAttribute="leading" type="default" id="B1u-Hr-xYn"/>
+                                    <constraint firstItem="VFU-be-Gfo" firstAttribute="bottom" secondItem="G2p-Rs-eIq" secondAttribute="bottom" type="default" id="hD7-ri-0E9"/>
+                                    <constraint firstItem="VFU-be-Gfo" firstAttribute="top" secondItem="G2p-Rs-eIq" secondAttribute="top" type="default" id="wbn-MS-GSS"/>
+                                    <constraint firstItem="VFU-be-Gfo" firstAttribute="trailing" secondItem="G2p-Rs-eIq" secondAttribute="trailing" type="default" id="zme-ve-yXv"/>
+                                </constraints>
                                 <connections>
-                                    <segue destination="21" kind="push" id="NvA-SG-6z6"/>
+                                    <outlet property="imageView" destination="VFU-be-Gfo" id="aee-mX-VKa"/>
+                                    <segue destination="21" kind="push" identifier="BBImageSelectToGame" id="NvA-SG-6z6"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
-                            <outlet property="dataSource" destination="lVn-eQ-KJb" id="Wcm-dk-2JQ"/>
-                            <outlet property="delegate" destination="lVn-eQ-KJb" id="h7b-9V-yvX"/>
+                            <outlet property="dataSource" destination="lVn-eQ-KJb" id="T2k-QA-1td"/>
+                            <outlet property="delegate" destination="lVn-eQ-KJb" id="XIH-Tj-nEp"/>
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Select Image" id="lU1-Tk-kBW"/>
@@ -107,23 +120,28 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="27">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" size="system"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GKy-rx-Afw">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mS-nG-xQY">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="27" firstAttribute="centerY" secondItem="22" secondAttribute="centerY" type="default" id="7cE-gL-0wv"/>
-                            <constraint firstItem="27" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="R0m-z7-TWk"/>
-                            <constraint firstAttribute="trailing" secondItem="27" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="pRe-qY-58T"/>
+                            <constraint firstItem="GKy-rx-Afw" firstAttribute="top" secondItem="22" secondAttribute="top" type="default" id="FwW-u4-riK"/>
+                            <constraint firstItem="GKy-rx-Afw" firstAttribute="trailing" secondItem="22" secondAttribute="trailing" type="default" id="dM7-bL-Xfg"/>
+                            <constraint firstItem="1mS-nG-xQY" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ecd-0y-Y9W"/>
+                            <constraint firstItem="GKy-rx-Afw" firstAttribute="leading" secondItem="22" secondAttribute="leading" type="default" id="gAh-Ga-jwV"/>
+                            <constraint firstAttribute="bottom" secondItem="1mS-nG-xQY" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="x1i-gO-4Aw"/>
+                            <constraint firstAttribute="bottom" secondItem="GKy-rx-Afw" secondAttribute="bottom" constant="184" id="xi9-wg-Hav"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Game" id="26"/>
                     <connections>
-                        <outlet property="detailDescriptionLabel" destination="27" id="28"/>
+                        <outlet property="gameView" destination="GKy-rx-Afw" id="Zg3-Bq-0cL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
@@ -131,12 +149,30 @@
             <point key="canvasLocation" x="1330" y="48"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="placeholder.png" width="450" height="450"/>
+    </resources>
     <classes>
         <class className="BBGameViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BBGameViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="gameView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="BBImageCollectionCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BBImageCollectionCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+            </relationships>
         </class>
         <class className="BBMenuViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BBMenuViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="searchTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="BBSearchReultsViewController" superclassName="UICollectionViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BBSearchReultsViewController.h"/>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
@@ -152,9 +188,6 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

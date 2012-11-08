@@ -11,6 +11,7 @@
 @interface BBNetworkModel : NSObject
 
 + (void)startSearchingWithText:(NSString*)text success:(void (^)(NSArray *imagesUrls))success failure:(void (^)(NSError *error))failure;
++ (void)startLoadImageWithURL:(NSURL*)url success:(void (^)(UIImage *image))success failure:(void (^)(NSError *error))failure;
 + (void)stopAllConnections;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "BBMenuViewController.h"
+#import "BBSearchReultsViewController.h"
 
 @interface BBMenuViewController ()
 
@@ -33,6 +34,13 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"BBMenuToSelectImage"]) {
+        ((BBSearchReultsViewController*)segue.destinationViewController).searchString = self.searchTextField.text;
+    }
 }
 
 @end

@@ -13,11 +13,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [BBNetworkModel startSearchingWithText:@"test" success:^(NSArray *imagesUrls) {
-        
-    } failure:^(NSError *error) {
-        
-    }];
     return YES;
 }
 							

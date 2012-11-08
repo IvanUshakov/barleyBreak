@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface BBGameViewController : UIViewController
-
+@property (strong, nonatomic) NSDictionary *imageData;
+@property (weak, nonatomic) IBOutlet UIView *gameView;
 @end

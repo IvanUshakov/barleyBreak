@@ -20,18 +20,6 @@
 
 @implementation BBSearchReultsViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-//    [self.collectionView registerClass:[BBImageCollectionCell class] forCellWithReuseIdentifier:@"BBImageCollectionCell"];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - UICollectionView Datasource
 
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
@@ -78,8 +66,8 @@
     [self.loadingImages addObject:@(index)];
     [BBNetworkModel startLoadImageWithURL:[NSURL URLWithString:self.imagesData[index][@"tbUrl"]]
                                   success:^(UIImage *image) {
-                                      CGFloat maxSize = MIN(image.size.width, image.size.height);
-                                      CGRect crop = CGRectMake((image.size.width - maxSize) / 2.0, (image.size.height - maxSize) / 2.0, maxSize, maxSize);
+                                      CGFloat minSize = MIN(image.size.width, image.size.height);
+                                      CGRect crop = CGRectMake((image.size.width - minSize) / 2.0, (image.size.height - minSize) / 2.0, minSize, minSize);
                                       self.images[index] = [image crop:crop];
                                       BBImageCollectionCell *cell = (BBImageCollectionCell*)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
                                       cell.imageView.image = self.images[index];

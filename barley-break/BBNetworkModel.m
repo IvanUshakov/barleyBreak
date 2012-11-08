@@ -37,17 +37,23 @@ typedef enum {
                                        queue:[self networkOperationQueue]
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
                                if (error) {
-                                   failure(error);
+                                   dispatch_async(dispatch_get_main_queue(),^{
+                                       failure(error);
+                                   });
                                    return;
                                }
                                
                                id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
                                if (error || [json[@"responseStatus"] integerValue] != 200) {
-                                   failure(error);
+                                   dispatch_async(dispatch_get_main_queue(),^{
+                                       failure(error);
+                                   });
                                    return;
                                }
-                            
-                               success(json[@"responseData"][@"results"]);
+                               
+                               dispatch_async(dispatch_get_main_queue(),^{
+                                   success(json[@"responseData"][@"results"]);
+                               });
                            }];
 }
 
@@ -58,16 +64,22 @@ typedef enum {
                                        queue:[self networkOperationQueue]
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
                                if (error) {
-                                   failure(error);
+                                   dispatch_async(dispatch_get_main_queue(),^{
+                                       failure(error);
+                                   });
                                    return;
                                }
                             
                                UIImage *image = [[UIImage alloc] initWithData:data];
                                if (!image) {
+                                   dispatch_async(dispatch_get_main_queue(),^{
                                    failure([NSError errorWithDomain:networkModelErrorDomain code:networkModelErrorCodesCanNotCreateImage userInfo:nil]);
-                               }
+                                   });
+                                }
                                
-                               success(image);
+                               dispatch_async(dispatch_get_main_queue(),^{
+                                   success(image);
+                               });
                            }];
 }
 

@@ -24,6 +24,7 @@
 		2A3EAC42164AB119008A8087 /* BBImageCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3EAC41164AB119008A8087 /* BBImageCollectionCell.m */; };
 		2A3EAC4C164BA76A008A8087 /* UIImage+barleyBreak.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3EAC4B164BA76A008A8087 /* UIImage+barleyBreak.m */; };
 		2A3EAC4E164BAC9B008A8087 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A3EAC4D164BAC9B008A8087 /* placeholder.png */; };
+		2A3EAC51164BF954008A8087 /* BBGameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3EAC50164BF954008A8087 /* BBGameModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,8 @@
 		2A3EAC4A164BA76A008A8087 /* UIImage+barleyBreak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+barleyBreak.h"; sourceTree = "<group>"; };
 		2A3EAC4B164BA76A008A8087 /* UIImage+barleyBreak.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+barleyBreak.m"; sourceTree = "<group>"; };
 		2A3EAC4D164BAC9B008A8087 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		2A3EAC4F164BF953008A8087 /* BBGameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBGameModel.h; sourceTree = "<group>"; };
+		2A3EAC50164BF954008A8087 /* BBGameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBGameModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +148,8 @@
 			children = (
 				2A3EAC2A1645ACCD008A8087 /* BBNetworkModel.h */,
 				2A3EAC2B1645ACCD008A8087 /* BBNetworkModel.m */,
+				2A3EAC4F164BF953008A8087 /* BBGameModel.h */,
+				2A3EAC50164BF954008A8087 /* BBGameModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 				2A3EAC2C1645ACCD008A8087 /* BBNetworkModel.m in Sources */,
 				2A3EAC42164AB119008A8087 /* BBImageCollectionCell.m in Sources */,
 				2A3EAC4C164BA76A008A8087 /* UIImage+barleyBreak.m in Sources */,
+				2A3EAC51164BF954008A8087 /* BBGameModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
